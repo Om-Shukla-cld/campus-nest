@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0f172a;
+  --color-secondary: #1e293b;
+  --color-accent-gold: #f59e0b;
+  --color-accent-blue: #3b82f6;
+  --color-accent-emerald: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Glass Card ── */
+.glass-card {
+  @apply bg-white rounded-2xl border border-slate-100 shadow-sm;
+}
+
+/* Dark glass variant */
+.glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+/* ── Nav Item ── */
+.nav-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold cursor-pointer
+         transition-all duration-150 text-slate-500 hover:bg-slate-100 hover:text-slate-900;
+}
+.nav-item.active {
+  @apply bg-amber-50 text-amber-600 border-l-4 border-amber-500 pl-3;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  @apply px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-xl
+         transition-all duration-150 shadow-sm hover:shadow-amber-200 hover:shadow-md
+         text-sm tracking-wide;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-xl
+         border border-slate-200 transition-all duration-150 text-sm;
+}
+
+.btn-blue {
+  @apply px-6 py-2.5 bg-blue-500 hover:bg-blue-400 text-white font-bold rounded-xl
+         transition-all duration-150 shadow-sm text-sm;
+}
+
+.btn-danger {
+  @apply px-6 py-2.5 bg-red-500 hover:bg-red-400 text-white font-bold rounded-xl
+         transition-all duration-150 text-sm;
+}
+
+/* ── Input ── */
+.input-field {
+  @apply w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl
+         focus:border-amber-400 focus:ring-2 focus:ring-amber-100 outline-none
+         transition-all text-slate-800 placeholder:text-slate-400 text-sm font-medium;
+}
+
+/* ── Tag / Badge ── */
+.tag {
+  @apply px-2.5 py-1 text-xs font-semibold rounded-full;
+}
+.tag-gold { @apply bg-amber-50 text-amber-700 border border-amber-100; }
+.tag-blue { @apply bg-blue-50 text-blue-700 border border-blue-100; }
+.tag-green { @apply bg-emerald-50 text-emerald-700 border border-emerald-100; }
+.tag-red { @apply bg-red-50 text-red-700 border border-red-100; }
+.tag-slate { @apply bg-slate-100 text-slate-600 border border-slate-200; }
+
+/* ── Status dots ── */
+.status-dot {
+  @apply inline-block w-2 h-2 rounded-full;
+}
+
+/* ── Section header ── */
+.section-title {
+  @apply text-2xl font-black tracking-tight text-slate-900;
+  font-family: 'Syne', sans-serif;
+}
+
+/* ── Property card hover ── */
+.property-card {
+  @apply glass-card overflow-hidden cursor-pointer transition-all duration-200
+         hover:shadow-md hover:border-amber-200 hover:-translate-y-1;
+}
+
+/* ── Chart wrapper ── */
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+}
+
+/* ── Overlay backdrop ── */
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Sidebar layout ── */
+.sidebar-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+  @apply bg-white border-r border-slate-100;
+}
+.main-content {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+/* ── Animate pulse for available slots ── */
+@keyframes available-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.slot-available { animation: available-pulse 2s ease-in-out infinite; }
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Landing page special ── */
+.landing-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* ── Progress bar ── */
+.progress-bar {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ── Verified badge ── */
+.verified-badge {
+  @apply inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-50 text-emerald-700
+         border border-emerald-200 rounded-full text-xs font-bold;
+}
+
+/* ── Toast-like notification ── */
+.toast {
+  @apply fixed bottom-6 right-6 z-[200] px-5 py-4 rounded-2xl shadow-xl text-sm font-semibold;
+  animation: slideInRight 0.3s ease;
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .sidebar-layout { flex-direction: column; }
+}

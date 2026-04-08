@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+uploads/
+campusnest.db
+*.db-journal
+
+# Node
+node_modules/
+dist/
+.vite/
