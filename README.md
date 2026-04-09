@@ -307,7 +307,7 @@ app.add_middleware(
 
 * Aradhana Singh – 24BCE10998
 * Sanskar Gupta – 24BCE11374
-* Om Shukla – 24BSA10205
+* Om Shukla – 24BSA10205(team lead)
 
 ---
 ---
